@@ -1,13 +1,37 @@
 import java.util.Objects;
 
 public class Book {
-    private final String bookName;
-    private final String author;
-    private final int publishYear;
+    private String bookName;
+    private Author author;
+    private int publishYear;
 
-    public Book(String bookName, String author, int publishYear) {
+    public Book(String bookName, Author author, int publishYear) {
         this.bookName = bookName;
         this.author = author;
+        this.publishYear = publishYear;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public int getPublishYear() {
+        return publishYear;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public void setPublishYear(int publishYear) {
         this.publishYear = publishYear;
     }
 
@@ -22,11 +46,13 @@ public class Book {
         return Objects.hash(bookName, author, publishYear);
     }
 
+    @Override
     public String toString() {
         return "Book{" +
-                " bookName = '" + bookName + '\''  +
-                ", author = " + author +
-                ", publishYear " + publishYear +
+                "bookName='" + bookName + '\'' +
+                ", author=" + author +
+                ", publishYear=" + publishYear +
                 '}';
     }
 }
+
